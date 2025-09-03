@@ -69,6 +69,7 @@ canvas.addEventListener("mousemove", (e) => {
 // 色変更
 document.getElementById("colorPicker").addEventListener("input", (e) => {
     // TODO: 色変更
+    color = e.target.value;
 });
 
 // 太さ変更
