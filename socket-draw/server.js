@@ -25,6 +25,11 @@ io.on("connection", (socket) => {
     });
 
     // TODO: クリアイベント
+    socket.on("clear", () => {
+        console.log("クリアイベント");
+        // 接続しているユーザーに送信（送信元を除く）
+        socket.broadcast.emit("clear");
+    });
 
     // 切断イベント
     socket.on("disconnect", () => {
