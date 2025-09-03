@@ -108,7 +108,9 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
 // ------------------------------
 // TODO: 描画イベント受信
 // TODO: 受信データで描画
-
+socket.on("draw", (data) => {
+    drawLine(data.x1, data.y1, data.x2, data.y2, data.color, data.size);
+});
 
 // TODO: クリアイベント受信
 // TODO: 画面クリア
