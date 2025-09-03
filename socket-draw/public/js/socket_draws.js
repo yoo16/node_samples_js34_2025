@@ -39,6 +39,7 @@ function clearCanvas() {
 // 描画開始
 canvas.addEventListener("mousedown", (e) => {
     drawing = true;
+    // タッチした座標を保存
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
 
@@ -57,6 +58,7 @@ canvas.addEventListener("mousemove", (e) => {
 
     // TODO: 描画: drawLine() を使用
     // データ: lastX, lastY, x, y, color, size
+    drawLine(lastX, lastY, x, y, color, size);
 
     // TODO: サーバ送信信
 
