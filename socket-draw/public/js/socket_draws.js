@@ -114,3 +114,6 @@ socket.on("draw", (data) => {
 
 // TODO: クリアイベント受信
 // TODO: 画面クリア
+socket.on("clear", () => {
+    clearCanvas();
+});
