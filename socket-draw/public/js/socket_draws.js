@@ -92,6 +92,7 @@ document.getElementById("sizePicker").addEventListener("input", (e) => {
 document.getElementById("clearBtn").addEventListener("click", () => {
     clearCanvas();
     // TODO: クリアイベント送信
+    socket.emit("clear");
 });
 
 // ダウンロード処理
