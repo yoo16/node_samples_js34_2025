@@ -31,6 +31,7 @@ function clearCanvas() {
     const toX = canvas.width;
     const toY = canvas.height;
     // TODO: (0, 0) から (toX, toY) をクリア
+    ctx.clearRect(0, 0, toX, toY);
 }
 
 // ------------------------------
@@ -75,6 +76,7 @@ document.getElementById("colorPicker").addEventListener("input", (e) => {
 // 太さ変更
 document.getElementById("sizePicker").addEventListener("input", (e) => {
     // TODO: 太さ変更
+    size = e.target.value;
 });
 
 // クリアボタン
