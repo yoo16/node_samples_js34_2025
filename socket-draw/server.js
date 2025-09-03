@@ -7,8 +7,8 @@ const app = express();
 const server = http.createServer(app);
 
 // TODO: public フォルダを静的配信
-// const path = require("path");
-// app.use(express.static(path.join(__dirname, "public")));
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
 // TODO: Socket.IO サーバーを初期化
 const io = new Server(server);
