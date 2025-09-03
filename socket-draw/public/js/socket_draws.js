@@ -85,6 +85,15 @@ document.getElementById("clearBtn").addEventListener("click", () => {
     // TODO: クリアイベント送信
 });
 
+// ダウンロード処理
+document.getElementById("downloadBtn").addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.download = "canvas.png"; // 保存ファイル名
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+});
+
+
 // ------------------------------
 // 🌐 Socket.IO 受信イベント
 // ------------------------------
