@@ -1,5 +1,5 @@
 // TODO: Socket.IO クライアント初期化
-// const socket = io();
+const socket = io();
 
 // Canvas 取得
 const canvas = document.getElementById("canvas");
@@ -62,6 +62,15 @@ canvas.addEventListener("mousemove", (e) => {
     drawLine(lastX, lastY, x, y, color, size);
 
     // TODO: サーバ送信信
+    // draw のキーワードで、座標と色、太さを送信
+    socket.emit("draw", {
+        x1: lastX,
+        y1: lastY,
+        x2: x,
+        y2: y,
+        color: color,
+        size: size
+    });
 
     // 最新の座標を保存
     [lastX, lastY] = [x, y];
