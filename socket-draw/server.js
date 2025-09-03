@@ -20,6 +20,8 @@ io.on("connection", (socket) => {
     // TODO: 描画イベント
     socket.on("draw", (data) => {
         console.log(data);
+        // 接続しているユーザーに送信（送信元を除く）
+        socket.broadcast.emit("draw", data);
     });
 
     // TODO: クリアイベント
