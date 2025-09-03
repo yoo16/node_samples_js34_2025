@@ -11,6 +11,7 @@ const server = http.createServer(app);
 // app.use(express.static(path.join(__dirname, "public")));
 
 // TODO: Socket.IO サーバーを初期化
+const io = new Server(server);
 
 // Socket.IO の接続イベント
 io.on("connection", (socket) => {
