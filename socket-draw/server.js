@@ -18,6 +18,9 @@ io.on("connection", (socket) => {
     console.log("ユーザー接続:", socket.id);
 
     // TODO: 描画イベント
+    socket.on("draw", (data) => {
+        console.log(data);
+    });
 
     // TODO: クリアイベント
 
