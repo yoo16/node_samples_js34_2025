@@ -115,13 +115,13 @@ const createMessageElement = (data, isMyself) => {
     if (isMyself) {
         return `
         <div class="inline-block px-3 py-2 max-w-[90%] bg-sky-500 text-white rounded-lg">
-
+            ${message}
         </div>
         `;
     } else {
         return `
         <div class="inline-block px-3 py-2 max-w-[90%] border border-gray-200 text-gray-800 rounded-lg">
-
+            ${message}
         </div>
         `;
     }
