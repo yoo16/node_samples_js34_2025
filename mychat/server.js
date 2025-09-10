@@ -47,8 +47,15 @@ logout = (socket) => {
 // Socket.IO の接続イベント
 io.on('connection', (socket) => {
     // TODO: message の送受信: socket.on('message', (data) => { ... })
-    // TODO: 日時データを追加
-    // TODO: クライアントへ送信: io.emit('message', data);
+    socket.on('message', (data) => {
+        // data の内容: { user: { name, icon, token }, message: 'メッセージ内容' }
+        // TODO: 日時データを追加
+        data.datetime = new Date();
+        // TODO: クライアント全員に送信: io.emit('message', data);
+        io.emit('message', data);
+
+        console.log('message:', data);
+    });
 
     //ログイン処理
     socket.on('auth', (user) => {

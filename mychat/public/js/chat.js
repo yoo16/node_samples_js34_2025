@@ -217,6 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // TODO: チャットメッセージの受信(message): 
     // 受信後に createChatMessage(data) を呼び出してメッセージを表示
+    socket.on('message', (data) => {
+        // チャットメッセージの表示
+        createChatMessage(data);
+    });
 
     // ユーザの入室の通知
     socket.on('user_joined', (data) => {
@@ -267,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 送信データ
         const data = { message: message.value, user };
         // TODO: サーバにメッセージ送信(message) 
+        socket.emit('message', data);
 
         // 送信後、メッセージ欄をクリア
         message.value = '';
