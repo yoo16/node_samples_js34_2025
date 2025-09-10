@@ -238,8 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
         users = data.users;
 
         // TODO: 退出メッセージの表示
-        // const msg = `${data.username} が退出しました`;
-        // myChatList.insertAdjacentHTML("afterbegin", `<small class="text-gray-400 block">${msg}</small>`);
+        const msg = `${data.username} が退出しました`;
+        myChatList.insertAdjacentHTML("afterbegin", `<small class="text-gray-400 block">${msg}</small>`);
 
         // ユーザリストの更新
         updateUserList();
@@ -332,6 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ログアウト
     document.getElementById('logout').addEventListener('click', () => {
         // TODO: サーバーに通知: socket.emit('logout');
+        socket.emit('logout');
 
         // ユーザ情報クリア
         user = {};

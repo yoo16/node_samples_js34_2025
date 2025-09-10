@@ -42,6 +42,10 @@ logout = (socket) => {
     delete users[socket.id];
 
     // TODO: 送信元以外全てのクライアントに送信
+    socket.broadcast.emit('user_left', {
+        username: user.name,
+        users: users,
+    });
 }
 
 // Socket.IO の接続イベント
