@@ -45,12 +45,13 @@ const createIcons = () => {
 const updateUserList = () => {
     if (!users) return;
     // TODO: user.name を表示
+    // ユーザを繰り返し処理して、 li 要素を作成
     userList.innerHTML = Object.values(users)
         .map(
             (user) => `
             <li class="flex items-center gap-2 px-2 py-1 border-b border-gray-200">
                 <img src="${imagePath(user.icon)}" class="w-8 h-8 rounded-full object-cover">
-                <span></span>
+                <span>${user.name}</span>
             </li>
             `
         )
@@ -208,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.textContent = user.name;
             });
             // userInfo を表示
-            document.getElementById('userInfo').classList.remove('hidden');
+            // document.getElementById('userInfo').classList.remove('hidden');
             // ユーザリストの更新
             updateUserList();
         }
