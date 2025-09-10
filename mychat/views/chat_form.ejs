@@ -1,0 +1,26 @@
+<div class="mt-3">
+    <textarea id="message" class="w-full border rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+        placeholder="Message"></textarea>
+</div>
+
+<div class="flex items-center gap-3 mt-3">
+    <!-- 送信ボタン（青） -->
+    <button id="send" class="px-4 py-2 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition">
+        Send
+    </button>
+
+    <!-- スタンプボタン（白） -->
+    <button class="stamp px-4 py-2 bg-white text-gray-700 border rounded-full hover:bg-gray-100 transition">
+        Stamp
+    </button>
+
+    <!-- 画像アップロード（白） -->
+    <input type="file" id="uploadImage" class="hidden" accept="image/*">
+    <label for="uploadImage"
+        class="px-4 py-2 bg-white text-gray-700 border rounded-full cursor-pointer hover:bg-gray-100 transition">
+        Image
+    </label>
+</div>
+
+
+<div id="stampList" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 hidden"></div>

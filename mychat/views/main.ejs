@@ -1,0 +1,15 @@
+<div class="w-full">
+    <%- include('chat_form.ejs') %>
+</div>
+
+<div class="grid grid-cols-12 gap-4 mt-4">
+    <!-- チャットリスト -->
+    <div class="col-span-9">
+        <div id="myChatList" class="space-y-3"></div>
+    </div>
+
+    <!-- ユーザーリスト -->
+    <div class="col-span-3">
+        <%- include('user_list.ejs') %>
+    </div>
+</div>
