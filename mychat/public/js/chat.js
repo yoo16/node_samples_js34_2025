@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.stamp').forEach((el) => {
         el.addEventListener('click', () => {
             // TODO: スタンプリストの表示・非表示
-            // stampList.classList.toggle("hidden");
+            stampList.classList.toggle("hidden");
         });
     });
 
@@ -291,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 送信データ
             const data =  { user, image: event.target.src }
             // TODO: サーバにスタンプ送信(upload_stamp)
+            socket.emit('upload_stamp', data);
 
             // スタンプリストを隠す
             stampList.classList.add("hidden");
