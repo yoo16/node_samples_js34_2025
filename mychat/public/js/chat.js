@@ -306,14 +306,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // 画像アップロード
     const uploadInput = document.getElementById('uploadImage');
     uploadInput.addEventListener('change', (event) => {
+        // 選択したファイルのうち1つ目を取得
         const file = event.target.files[0];
         if (!file) return;
 
+        // 画像ファイルを読み込む
         const reader = new FileReader();
         reader.onloadend = () => {
             // 送信データ
             const data = { user, image: reader.result };
             // TODO: サーバに画像送信(upload_image)
+            socket.emit('upload_image', data);
         };
         reader.readAsDataURL(file);
 

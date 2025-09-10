@@ -91,6 +91,11 @@ io.on('connection', (socket) => {
     // TODO: 画像送受信: upload_image
     // TODO: 日時データを追加
     // TODO: クライアントへ送信: io.emit('upload_image', data)
+    socket.on('upload_image', (data) => {
+        data.datetime = new Date();
+        io.emit('upload_image', data);
+        console.log('upload_image:', data);
+    });
 
     //ログアウト
     socket.on('logout', () => {
