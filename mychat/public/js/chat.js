@@ -253,6 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // TODO: サーバに画像受信: 受信後: createChatImage(data, { width: IMAGE_WIDTH }) を呼び出し
+    socket.on('upload_image', (data) => {
+        // 画像の表示
+        createChatImage(data, { width: IMAGE_WIDTH });
+        console.log('upload_image:', data);
+    });
 
     // ログインボタンをクリック
     document.getElementById('login').addEventListener('click', () => {
