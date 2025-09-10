@@ -66,8 +66,10 @@ io.on('connection', (socket) => {
         console.log(user);
 
         // TODO: 送信元のユーザにログイン済みを送信: emit('logined', data); 
+        socket.emit('logined', data);
 
         // TODO: ブロードキャストでユーザログインを送信: emit('user_joined', data)
+        socket.broadcast.emit('user_joined', data);
     });
 
     // TODO: スタンプ送受信: upload_stamp
