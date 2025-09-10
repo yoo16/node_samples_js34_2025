@@ -255,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
             chatArea.style.display = 'block';
 
             // TODO: サーバ認証(auth): name, icon を送信
+            socket.emit('auth', { name, icon });
         }
     });
 
