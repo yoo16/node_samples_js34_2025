@@ -82,6 +82,11 @@ io.on('connection', (socket) => {
     // TODO: スタンプ送受信: upload_stamp
     // TODO: 日時データを追加
     // TODO: クライアントへ送信: io.emit('upload_stamp', data)
+    socket.on('upload_stamp', (data) => {
+        data.datetime = new Date();
+        io.emit('upload_stamp', data);
+        console.log('upload_stamp:', data);
+    });
 
     // TODO: 画像送受信: upload_image
     // TODO: 日時データを追加

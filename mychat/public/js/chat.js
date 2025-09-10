@@ -246,6 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // TODO: サーバにスタンプ受信: 受信後: createChatImage(data, { width: STAMP_WIDTH }) を呼び出し
+    socket.on('upload_stamp', (data) => {
+        // スタンプの表示
+        createChatImage(data, { width: STAMP_WIDTH });
+        console.log('upload_stamp:', data);
+    });
 
     // TODO: サーバに画像受信: 受信後: createChatImage(data, { width: IMAGE_WIDTH }) を呼び出し
 
