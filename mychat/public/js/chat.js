@@ -226,8 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('user_joined', (data) => {
         users = data.users;
         // TODO: 入室メッセージの表示
-        // const msg = `${data.user.name} が入室しました`;
-        // myChatList.insertAdjacentHTML("afterbegin", `<small class="text-gray-400 block">${msg}</small>`);
+        const msg = `${data.user.name} が入室しました`;
+        myChatList.insertAdjacentHTML("afterbegin", `<small class="text-gray-400 block">${msg}</small>`);
 
         // ユーザリストの更新
         updateUserList();
@@ -342,6 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loginArea.style.display = 'block';
 
         // userInfo を非表示
-        document.getElementById('userInfo').classList.add('hidden');
+        // document.getElementById('userInfo').classList.add('hidden');
     });
 });
